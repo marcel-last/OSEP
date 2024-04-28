@@ -1,2 +1,2 @@
-# osep
+# OSEP
 OSEP Tools and Scripts
