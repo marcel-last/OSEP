@@ -96,7 +96,7 @@ namespace XorCoder
                         {
                             hex.AppendFormat("{0:D3}, ", b);
                             counter++;
-                            if (counter % 25 == 0)
+                            if (counter % 64 == 0)
                             {
                                 hex.Append("_\n");
                             }
