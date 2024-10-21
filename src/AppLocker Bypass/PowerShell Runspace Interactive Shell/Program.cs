@@ -20,7 +20,6 @@ namespace CInstaller
     {
         public override void Uninstall(System.Collections.IDictionary savedState)
         {
-            string cmd;
             Runspace rs = RunspaceFactory.CreateRunspace();
             PowerShell ps = PowerShell.Create();
             rs.Open();
