@@ -1,0 +1,6 @@
+C:\Tools\DotNetToJScript-master\DotNetToJScript-master\ExampleAssembly\bin\Debug\ExampleAssembly.dll
+C:\Tools\DotNetToJScript-master\DotNetToJScript-master\ExampleAssembly\bin\Debug\ExampleAssembly.pdb
+C:\Tools\DotNetToJScript-master\DotNetToJScript-master\ExampleAssembly\obj\Debug\ExampleAssembly.csprojAssemblyReference.cache
+C:\Tools\DotNetToJScript-master\DotNetToJScript-master\ExampleAssembly\obj\Debug\ExampleAssembly.csproj.CoreCompileInputs.cache
+C:\Tools\DotNetToJScript-master\DotNetToJScript-master\ExampleAssembly\obj\Debug\ExampleAssembly.dll
+C:\Tools\DotNetToJScript-master\DotNetToJScript-master\ExampleAssembly\obj\Debug\ExampleAssembly.pdb
