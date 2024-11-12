@@ -40,4 +40,5 @@ Invoke-ReflectivePEInjection -PEBytes $bytes -ProcId $procid
 
 **Note:**
 Ignore the `VoidFunc` error that appears after running the script, it is purely cosmetic:
-![image](https://github.com/user-attachments/assets/61e829d2-af06-4188-a0d6-871a865c54ad)
+![image](https://github.com/user-attachments/assets/29f9cab4-1e05-490d-83d6-55c71ead1ce3)
+
