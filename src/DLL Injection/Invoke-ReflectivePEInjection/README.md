@@ -37,3 +37,7 @@ $procid = (Get-Process -Name explorer).Id
 ```powershell
 Invoke-ReflectivePEInjection -PEBytes $bytes -ProcId $procid
 ```
+
+**Note:**
+Ignore the `VoidFunc` error that appears after running the script, it is purely cosmetic:
+![image](https://github.com/user-attachments/assets/61e829d2-af06-4188-a0d6-871a865c54ad)
