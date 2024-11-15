@@ -1,3 +1,6 @@
+// Compile: gcc -o xor xor.c
+// Usage: ./xor [-VBA]
+
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
