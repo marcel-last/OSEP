@@ -1,0 +1,6 @@
+**/passwords.txt
+**/usernames.txt
+**/credentials.txt
+**/targets.txt
+**/*.ovpn
+*.ovpn
