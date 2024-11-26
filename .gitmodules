@@ -1,6 +1,3 @@
 [submodule "src/Invoke-SharpLoader"]
 	path = src/Invoke-SharpLoader
 	url = https://github.com/S3cur3Th1sSh1t/Invoke-SharpLoader.git
-[submodule "src/SharpKatz"]
-	path = src/SharpKatz
-	url = git@github.com:b4rtik/SharpKatz.git
