@@ -97,7 +97,7 @@ namespace PrintSpoofer
             // Parse arguments (pipe name)
             if (args.Length != 2)
             {
-                Console.WriteLine("Please enter the pipe name to be used and the binary to trigger as arguments.\nExample: .\\PrintSpoofer.exe \\\\.\\pipe\\test\\pipe\\spoolss c:\\windows\\tasks\\bin.exe");
+                Console.WriteLine("Please enter the pipe name to be used and the binary to trigger as arguments.\nExample: .\\PrintSpoofer.exe \\\\.\\pipe\\test\\pipe\\spoolss c:\\windows\\tasks\\run.exe");
                 return;
             }
             string pipeName = args[0];
